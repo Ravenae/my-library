@@ -38,5 +38,5 @@ jobs:
            DATABASE_NAME: 'override du database_name'
       
       - run: pnpm add -D eslint
-      - run: pnpm eslint init
+      - run: pnpm lint 
       
