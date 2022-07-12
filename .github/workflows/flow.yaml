@@ -36,4 +36,7 @@ jobs:
       - run: node dummy.js
         env:
            DATABASE_NAME: 'override du database_name'
-      - run: pnpm lint
+      
+      - run: pnpm add -D eslint
+      - run: pnpm eslint init
+      
