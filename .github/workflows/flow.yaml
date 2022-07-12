@@ -7,6 +7,10 @@ env:
 
 jobs:
   dummy-job:
+    strategy:
+      matrix:
+        version: [14, 16, 18]
+      fail-fast: true
     name: "my job"
     runs-on:  ubuntu-latest
     steps:
