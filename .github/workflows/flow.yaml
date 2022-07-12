@@ -39,4 +39,5 @@ jobs:
       
       - run: npm i
       - run: npm run lint 
+      - run: npm run tests
       
