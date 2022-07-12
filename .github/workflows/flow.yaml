@@ -13,12 +13,18 @@ jobs:
         os: ["ubuntu-latest", "windows-latest", "macos-latest"]
       fail-fast: true
     name: "my job"
-    runs-on:  ${{matix.os}}
+    runs-on:  ${{matrix.os}}
     steps:
       - run: ls -la
+        if: ${{runner.os == 'linux'|| runner.os == 'macos'}}
+      - run: dir
+        if: ${{runner.os == 'windows'}}
       # on récupère le contenu du dépôt
       - uses: actions/checkout@v3
       - run: ls -la
+        if: ${{runner.os == 'linux' || runner.os == 'macos'}}
+      - run: dir
+        if: ${{runner.os == 'windows'}}
       - name: "Installation de node ${{matrix.version}}x"
         uses: actions/setup-node@v3
         with:
