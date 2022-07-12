@@ -37,6 +37,6 @@ jobs:
         env:
            DATABASE_NAME: 'override du database_name'
       
-      - run: npm add -D eslint
-      - run: npm lint 
+      - run: npm i
+      - run: npm run lint 
       
